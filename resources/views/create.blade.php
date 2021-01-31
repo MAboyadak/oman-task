@@ -1,3 +1,9 @@
+@if (session('errors'))
+    @foreach (session('errors')->get('file') as $error)
+        <h3 style="color:rgb(235, 35, 35)">{{ $error }}</h3>
+    @endforeach
+@endif
+
 <form method="POST" action="{{ route('file.upload') }}" style="padding:5px" enctype="multipart/form-data">
     @csrf
     <div style="padding:10px">
